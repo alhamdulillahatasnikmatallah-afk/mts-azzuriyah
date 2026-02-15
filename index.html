@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTs Azzuriyah Cikunir - Kota Bekasi | Mendidik Generasi Berakhlak Mulia</title>
+    <meta name="description" content="MTs Azzuriyah Cikunir, Kota Bekasi. Sekolah Madrasah Tsanawiyah Islam Terpadu di Jaka Mulya, Bekasi. Mendidik generasi berakhlak mulia dan berprestasi.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d5c4b',
+                        secondary: '#1a7a64',
+                        accent: '#c9a227',
+                        dark: '#1a1a2e',
+                        light: '#f8f9fa',
+                        muted: '#6c757d'
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Source Sans 3', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a2e;
+            --muted: #6c757d;
+            --accent: #c9a227;
+            --card: #f8f9fa;
+            --border: #e9ecef;
+            --primary: #0d5c4b;
+            --secondary: #1a7a64;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Background Pattern */
+        .hero-pattern {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #2d9a7e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-pattern::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--bg), transparent);
+        }
+
+        /* Floating Elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-delay {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: -3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card Hover */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(13, 92, 75, 0.15);
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(13, 92, 75, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Nav Active */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Counter Animation */
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Decorative Elements */
+        .deco-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1), rgba(13, 92, 75, 0.1));
+        }
+
+        /* Focus States */
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Gallery Image */
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: default;
+        }
+
+        .gallery-item svg {
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Navbar Transition */
+        #navbar {
+            transition: all 0.3s ease;
+        }
+
+        #navbar.scrolled {
+            background: var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .floating, .floating-delay {
+                animation: none;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+            * {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-xl text-white">MTs Azzuriyah</span>
+                        <p class="text-xs text-white/70">Cikunir, Kota Bekasi</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#beranda" class="nav-link text-white/90 hover:text-white font-medium">Beranda</a>
+                    <a href="#tentang" class="nav-link text-white/90 hover:text-white font-medium">Tentang</a>
+                    <a href="#program" class="nav-link text-white/90 hover:text-white font-medium">Program</a>
+                    <a href="#fasilitas" class="nav-link text-white/90 hover:text-white font-medium">Fasilitas</a>
+                    <a href="#prestasi" class="nav-link text-white/90 hover:text-white font-medium">Prestasi</a>
+                    <a href="#kontak" class="bg-accent text-dark px-5 py-2.5 rounded-lg font-semibold hover:bg-yellow-400 transition-all">Hubungi Kami</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white p-2" aria-label="Toggle Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-primary z-50 shadow-2xl">
+        <div class="p-6">
+            <button id="closeMobileMenu" class="absolute top-6 right-6 text-white" aria-label="Close Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="mt-16 flex flex-col gap-4">
+                <a href="#beranda" class="text-white text-lg py-2 border-b border-white/10 mobile-link">Beranda</a>
+                <a href="#tentang" class="text-white text-lg py-2 border-b border-white/10 mobile-link">Tentang</a>
+                <a href="#program" class="text-white text-lg py-2 border-b border-white/10 mobile-link">Program</a>
+                <a href="#fasilitas" class="text-white text-lg py-2 border-b border-white/10 mobile-link">Fasilitas</a>
+                <a href="#prestasi" class="text-white text-lg py-2 border-b border-white/10 mobile-link">Prestasi</a>
+                <a href="#kontak" class="bg-accent text-dark px-5 py-3 rounded-lg font-semibold text-center mt-4 mobile-link">Hubungi Kami</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-pattern min-h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full mb-6">
+                        <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                        <span class="text-sm font-medium">Pendaftaran Tahun Ajaran 2025/2026 Dibuka</span>
+                    </div>
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Mendidik Generasi <span class="text-accent">Berakhlak Mulia</span> di Kota Bekasi
+                    </h1>
+                    <p class="text-lg text-white/80 mb-8 max-w-xl">
+                        MTs Azzuriyah Cikunir berkomitmen mencetak siswa yang unggul dalam ilmu pengetahuan, berkarakter Islami, dan siap menghadapi tantangan masa depan.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#tentang" class="btn-primary">
+                            Tentang Kami
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="#kontak" class="btn-outline bg-white/10 backdrop-blur border-white/30 text-white hover:bg-white hover:text-primary">Daftar Sekarang</a>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block">
+                    <div class="floating">
+                        <div class="w-80 h-80 bg-white/10 backdrop-blur rounded-3xl p-6 ml-auto">
+                            <div class="w-full h-full bg-gradient-to-br from-accent/20 to-white/10 rounded-2xl flex items-center justify-center">
+                                <svg class="w-32 h-32 text-white/80" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-delay absolute bottom-0 left-0">
+                        <div class="bg-accent text-dark px-6 py-4 rounded-xl shadow-xl">
+                            <p class="font-semibold">Terakreditasi A</p>
+                            <p class="text-sm opacity-80">Kualitas Terjamin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <p class="counter font-display" data-target="850">0</p>
+                        <p class="text-muted">Siswa Aktif</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="counter font-display" data-target="45">0</p>
+                        <p class="text-muted">Guru Profesional</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="counter font-display" data-target="15">0</p>
+                        <p class="text-muted">Tahun Pengalaman</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="counter font-display" data-target="85">0</p>
+                        <p class="text-muted">Prestasi Diraih</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tentang Section -->
+    <section id="tentang" class="py-24 relative overflow-hidden">
+        <div class="deco-circle w-96 h-96 -top-48 -right-48"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="relative">
+                        <div class="w-full aspect-[4/3] bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center p-8">
+                                    <svg class="w-24 h-24 text-primary mx-auto mb-4" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/>
+                                    </svg>
+                                    <p class="text-primary font-display text-xl font-semibold">Berdiri Sejak 2010</p>
+                                    <p class="text-muted">Cikunir, Jaka Mulya, Bekasi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-accent text-dark p-6 rounded-xl shadow-xl">
+                            <p class="text-3xl font-bold font-display">A</p>
+                            <p class="text-sm font-medium">Akreditasi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal" style="transition-delay: 0.2s">
+                    <span class="text-primary font-semibold tracking-wider uppercase text-sm">Tentang Kami</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-dark mt-3 mb-6">
+                        Membangun Karakter Islami Menuju Masa Depan Cemerlang
+                    </h2>
+                    <p class="text-muted text-lg leading-relaxed mb-6">
+                        MTs Azzuriyah berlokasi di kawasan Cikunir Raya, Jaka Mulya, Kota Bekasi. Sejak didirikan, kami berkomitmen menjadi lembaga pendidikan Islam terdepan yang menghasilkan generasi berakhlak mulia, berilmu, dan berprestasi di wilayah Bekasi dan sekitarnya.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark">Kurikulum Terintegrasi</h4>
+                                <p class="text-muted text-sm">Perpaduan kurikulum nasional dan pendidikan Islam</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark">Pendidikan Karakter</h4>
+                                <p class="text-muted text-sm">Pembentukan akhlakul karimah dalam setiap kegiatan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark">Pembinaan Tahfidz</h4>
+                                <p class="text-muted text-sm">Program unggulan menghafal Al-Quran</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#program" class="btn-primary inline-flex items-center gap-2">
+                        Lihat Program Kami
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="py-24 bg-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-semibold tracking-wider uppercase text-sm">Program Unggulan</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-dark mt-3 mb-4">
+                    Program Pendidikan Berkualitas
+                </h2>
+                <p class="text-muted max-w-2xl mx-auto">
+                    Berbagai program unggulan yang dirancang untuk mengembangkan potensi siswa secara optimal
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program Card 1 -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark mb-3">Program Tahfidz Quran</h3>
+                    <p class="text-muted mb-4">Program unggulan menghafal Al-Quran dengan metode yang teruji dan bimbingan guru tahfidz bersertifikat.</p>
+                    <div class="flex items-center gap-2 text-primary font-medium">
+                        <span>Target 3 Juz</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Program Card 2 -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100" style="transition-delay: 0.1s">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark mb-3">Kelas IPA Terpadu</h3>
+                    <p class="text-muted mb-4">Pembelajaran sains terpadu dengan praktikum dan eksperimen untuk mengembangkan jiwa ilmiah siswa.</p>
+                    <div class="flex items-center gap-2 text-primary font-medium">
+                        <span>Laboratorium Lengkap</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Program Card 3 -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100" style="transition-delay: 0.2s">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark mb-3">Kelas Bahasa Arab</h3>
+                    <p class="text-muted mb-4">Pembelajaran bahasa Arab intensif dengan pendekatan komunikatif dan pembiasaan dalam keseharian.</p>
+                    <div class="flex items-center gap-2 text-primary font-medium">
+                        <span>Muhadatsah Yaumiah</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Program Card 4 -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100" style="transition-delay: 0.3s">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark mb-3">Kelas IT</h3>
+                    <p class="text-muted mb-4">Pembelajaran teknologi informasi meliputi coding, desain grafis, dan literasi digital untuk masa depan.</p>
+                    <div class="flex items-center gap-2 text-primary font-medium">
+                        <span>Fasilitas Komputer</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Program Card 5 -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100" style="transition-delay: 0.4s">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark mb-3">Pondok Ramadhan</h3>
+                    <p class="text-muted mb-4">Program intensif selama bulan Ramadhan untuk pendalaman ilmu agama dan pembentukan karakter.</p>
+                    <div class="flex items-center gap-2 text-primary font-medium">
+                        <span>30 Hari Intensif</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Program Card 6 -->
+                <div class="reveal card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100" style="transition-delay: 0.5s">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-dark mb-3">English Club</h3>
+                    <p class="text-muted mb-4">Klub bahasa Inggris untuk meningkatkan kemampuan berkomunikasi dalam bahasa internasional.</p>
+                    <div class="flex items-center gap-2 text-primary font-medium">
+                        <span>Debat & Speech</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Fasilitas Section -->
+    <section id="fasilitas" class="py-24 relative overflow-hidden">
+        <div class="deco-circle w-72 h-72 -bottom-36 -left-36"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-semibold tracking-wider uppercase text-sm">Fasilitas</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-dark mt-3 mb-4">
+                    Fasilitas Pendukung Pembelajaran
+                </h2>
+                <p class="text-muted max-w-2xl mx-auto">
+                    Sarana dan prasarana modern untuk menunjang kegiatan belajar mengajar yang optimal
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+                <div class="gallery-item aspect-square bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
+                        </svg>
+                        <p class="font-semibold">Masjid</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-secondary to-primary flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        <p class="font-semibold">Perpustakaan</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                        <p class="font-semibold">Laboratorium IPA</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-secondary to-primary flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <p class="font-semibold">Lab Komputer</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-secondary to-primary flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"/>
+                        </svg>
+                        <p class="font-semibold">Kantin Sehat</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="font-semibold">UKS Lengkap</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-secondary to-primary flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        <p class="font-semibold">Lapangan Olahraga</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-6">
+                    <div class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <p class="font-semibold">Ruang Kelas AC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prestasi Section -->
+    <section id="prestasi" class="py-24 bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-accent font-semibold tracking-wider uppercase text-sm">Prestasi</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">
+                    Prestasi Siswa MTs Azzuriyah
+                </h2>
+                <p class="text-white/60 max-w-2xl mx-auto">
+                    Berbagai prestasi yang diraih siswa di bidang akademik dan non-akademik
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Prestasi Items -->
+                <div class="reveal space-y-6">
+                    <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-dark" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-accent text-sm font-medium">Juara 1 - Tingkat Kota Bekasi</span>
+                                <h4 class="text-white font-semibold text-lg mt-1">Olimpiade Matematika</h4>
+                                <p class="text-white/60 text-sm mt-1">Ahmad Fauzan - Kelas IX | 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-dark" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-accent text-sm font-medium">Juara 2 - Tingkat Provinsi Jawa Barat</span>
+                                <h4 class="text-white font-semibold text-lg mt-1">Lomba Pidato Bahasa Arab</h4>
+                                <p class="text-white/60 text-sm mt-1">Aisyah Putri - Kelas VIII | 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-dark" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-accent text-sm font-medium">Juara 1 - Se-Kota Bekasi</span>
+                                <h4 class="text-white font-semibold text-lg mt-1">MTQ Tilawah</h4>
+                                <p class="text-white/60 text-sm mt-1">Muhammad Rizki - Kelas IX | 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal space-y-6" style="transition-delay: 0.2s">
+                    <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-dark" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-accent text-sm font-medium">Juara 1 - Tingkat Bekasi Raya</span>
+                                <h4 class="text-white font-semibold text-lg mt-1">Lomba Cerdas Cermat Islam</h4>
+                                <p class="text-white/60 text-sm mt-1">Tim CCI MTs Azzuriyah | 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-dark" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-accent text-sm font-medium">Juara 3 - Tingkat Provinsi</span>
+                                <h4 class="text-white font-semibold text-lg mt-1">Lomba Karya Tulis Ilmiah</h4>
+                                <p class="text-white/60 text-sm mt-1">Fatimah Zahra - Kelas IX | 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-dark" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-accent text-sm font-medium">Juara 2 - Se-Kota Bekasi</span>
+                                <h4 class="text-white font-semibold text-lg mt-1">Lomba Paskibra</h4>
+                                <p class="text-white/60 text-sm mt-1">Tim Paskibra MTs Azzuriyah | 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ekstrakurikuler Section -->
+    <section class="py-24 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-semibold tracking-wider uppercase text-sm">Ekstrakurikuler</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-dark mt-3 mb-4">
+                    Kegiatan Pengembangan Bakat
+                </h2>
+                <p class="text-muted max-w-2xl mx-auto">
+                    Berbagai kegiatan ekstrakurikuler untuk mengembangkan minat dan bakat siswa
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 reveal">
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Pramuka</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">PMR</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Paskibra</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Futsal</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Bola Voli</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Pencak Silat</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Hadroh</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Kaligrafi</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Jurnalistik</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Tahfidz</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">English Club</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium text-dark hover:border-primary hover:text-primary transition-all cursor-default">Robotik</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-24 relative overflow-hidden">
+        <div class="deco-circle w-96 h-96 -top-48 -left-48"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <span class="text-primary font-semibold tracking-wider uppercase text-sm">Hubungi Kami</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-dark mt-3 mb-6">
+                        Mari Bergabung Bersama MTs Azzuriyah
+                    </h2>
+                    <p class="text-muted text-lg mb-8">
+                        Dapatkan informasi lebih lanjut tentang pendaftaran siswa baru dan program-program kami.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark">Alamat</h4>
+                                <p class="text-muted">Jl. Cikunir Raya No. 123, Jaka Mulya<br>Kec. Bekasi Barat, Kota Bekasi 17145</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark">Telepon</h4>
+                                <p class="text-muted">(021) 8243-1234<br>0812-8765-4321 (WhatsApp)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark">Email</h4>
+                                <p class="text-muted">info@mtsazzuriyah-cikunir.sch.id</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark">Jam Operasional</h4>
+                                <p class="text-muted">Senin - Jumat: 07.00 - 15.00 WIB<br>Sabtu: 07.00 - 12.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal" style="transition-delay: 0.2s">
+                    <form id="contactForm" class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <h3 class="font-display text-xl font-bold text-dark mb-6">Kirim Pesan</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-dark mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Masukkan nama Anda">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-dark mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Masukkan email Anda">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-dark mb-2">Nomor Telepon</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Masukkan nomor telepon">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-dark mb-2">Pesan</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Tulis pesan Anda..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-primary justify-center">
+                                Kirim Pesan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                            <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-display font-bold text-xl text-white">MTs Azzuriyah</span>
+                            <p class="text-xs text-white/50">Cikunir, Kota Bekasi</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 mb-6 max-w-md">
+                        Lembaga pendidikan Islam terpercaya di kawasan Cikunir, Jaka Mulya, Kota Bekasi. Berkomitmen mencetak generasi berakhlak mulia, berilmu, dan berprestasi.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all" aria-label="Facebook">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all" aria-label="Instagram">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all" aria-label="YouTube">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="text-white/60 hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#tentang" class="text-white/60 hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#program" class="text-white/60 hover:text-white transition-colors">Program</a></li>
+                        <li><a href="#fasilitas" class="text-white/60 hover:text-white transition-colors">Fasilitas</a></li>
+                        <li><a href="#prestasi" class="text-white/60 hover:text-white transition-colors">Prestasi</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Info Pendaftaran</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/60 hover:text-white transition-colors">Jadwal PPDB</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-white transition-colors">Syarat Pendaftaran</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-white transition-colors">Biaya Pendidikan</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-white transition-colors">Beasiswa</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-white/40 text-sm">
+                    &copy; 2025 MTs Azzuriyah Cikunir, Kota Bekasi. Hak Cipta Dilindungi.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize all DOM elements first
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const revealElements = document.querySelectorAll('.reveal');
+        const counters = document.querySelectorAll('.counter');
+        const contactForm = document.getElementById('contactForm');
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on links
+        mobileLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll reveal with IntersectionObserver
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // Counter animation
+        const counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'), 10);
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = function() {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target + '+';
+                        }
+                    };
+
+                    updateCounter();
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function(counter) {
+            counterObserver.observe(counter);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerOffset = 80;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
